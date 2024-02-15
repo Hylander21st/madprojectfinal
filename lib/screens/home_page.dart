@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_firestoreapp/screens/about_page.dart';
 import 'package:firebase_firestoreapp/screens/centreguide_page.dart';
-import 'package:firebase_firestoreapp/screens/addrecord_page.dart';
 import 'package:firebase_firestoreapp/screens/challenge_page.dart';
 import 'package:firebase_firestoreapp/screens/profile_page.dart';
 import 'package:firebase_firestoreapp/screens/learnpage.dart';
 import 'package:firebase_firestoreapp/screens/reports.dart';
 import 'package:firebase_firestoreapp/screens/report_page.dart';
-import 'package:firebase_firestoreapp/screens/showrecords_page.dart';
 import 'package:firebase_firestoreapp/services/firebaseauth_service.dart';
 import 'package:firebase_firestoreapp/screens/controller.dart';
 
