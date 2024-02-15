@@ -12,7 +12,7 @@ class LearnPage extends StatelessWidget {
     var cartController = Get.put(Controller());
     return Scaffold(
       appBar: AppBar(
-        title: Text('Learn'),
+        title: Text('Learn about Recycling'),
         backgroundColor: Colors.green, // Change app bar background color
       ),
       body: SingleChildScrollView(

@@ -55,7 +55,7 @@ class _ReportPageState extends State<ReportPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Report Page'),
+        title: Text('Make a Report'),
         backgroundColor: Colors.green, // Change app bar background color
       ),
       body: SingleChildScrollView(
