@@ -52,31 +52,31 @@ class HomePage extends StatelessWidget {
             ),
             // List of options in the drawer for navigation
             ListTile(
-              title: Text('About Page'),
+              title: Text('About Waste Wise'),
               onTap: () {
                 Get.to(() => AboutPage());
               },
             ),
             ListTile(
-              title: Text('Learn Page'),
+              title: Text('Learn about Recylcing'),
               onTap: () {
                 Get.to(() => LearnPage());
               },
             ),
             ListTile(
-              title: Text('Guide Page'),
+              title: Text('Location and Item Guide'),
               onTap: () {
                 Get.to(() => CentersAndItemsPage());
               },
             ),
             ListTile(
-              title: Text('Report Page'),
+              title: Text('Make a Report '),
               onTap: () {
                 Get.to(() => ReportPage());
               },
             ),
             ListTile(
-              title: Text('Reports Page'),
+              title: Text('Show Reports'),
               onTap: () {
                 Get.to(() => ShowReportsPage());
               },
@@ -111,22 +111,25 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: _buildLearnCardItem('Tips'),
+                      child: _buildLearnCardItem('Tips', onTap: () {
+                        // Handle tap for 'Tips'
+                        print('Tips tapped!');
+                      }),
                     ),
                     SizedBox(width: 20.0),
                     Expanded(
-                      child: _buildLearnCardItem('Articles'),
+                      child: _buildLearnCardItem('Articles', onTap: () {
+                        // Handle tap for 'Articles'
+                        print('Articles tapped!');
+                      }),
                     ),
                   ],
                 ),
                 SizedBox(height: 20.0),
-                GestureDetector(
-                  onTap: () {
-                    // Handle tap for 'Videos'
-                    print('Videos tapped!');
-                  },
-                  child: _buildLearnCardItem('Videos'),
-                ),
+                _buildLearnCardItem('Videos', onTap: () {
+                  // Handle tap for 'Videos'
+                  print('Videos tapped!');
+                }),
               ],
             ),
             SizedBox(height: 20.0),
@@ -175,13 +178,13 @@ class HomePage extends StatelessWidget {
 
   // Widget for building cards with titles and content
   Widget _buildCard({String title, Function onTap, List<Widget> children}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
+    return Card(
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: InkWell(
+        onTap: onTap,
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -222,20 +225,30 @@ class HomePage extends StatelessWidget {
   }
 
   // Widget for building learn card items
-  Widget _buildLearnCardItem(String label) {
-    return Container(
-      height: 100.0,
-      decoration: BoxDecoration(
-        color: Colors.lightGreen,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      padding: EdgeInsets.all(16.0),
-      child: Center(
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 16.0,
-            fontWeight: FontWeight.bold,
+  Widget _buildLearnCardItem(String label, {Function onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Opacity(
+        opacity:
+            onTap != null ? 1.0 : 0.5, // Adjust opacity based on onTap presence
+        child: Container(
+          height: 100.0,
+          decoration: BoxDecoration(
+            color: Colors.lightGreen,
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.black, // Border color for clickable buttons
+            ),
+          ),
+          padding: EdgeInsets.all(16.0),
+          child: Center(
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
       ),
@@ -246,19 +259,26 @@ class HomePage extends StatelessWidget {
   Widget _buildRecyclingCardItem({String label, Function onTap}) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        height: 100.0,
-        decoration: BoxDecoration(
-          color: Colors.lightGreen,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        padding: EdgeInsets.all(16.0),
-        child: Center(
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
+      child: Opacity(
+        opacity:
+            onTap != null ? 1.0 : 0.5, // Adjust opacity based on onTap presence
+        child: Container(
+          height: 100.0,
+          decoration: BoxDecoration(
+            color: Colors.lightGreen,
+            borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.black, // Border color for clickable buttons
+            ),
+          ),
+          padding: EdgeInsets.all(16.0),
+          child: Center(
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),

@@ -22,7 +22,7 @@ class LearnPage extends StatelessWidget {
           children: [
             // Videos
             Text(
-              'Videos',
+              'Videos ',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class LearnPage extends StatelessWidget {
 
             // Articles
             Text(
-              'Articles',
+              'Articles ',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class LearnPage extends StatelessWidget {
 
             // Tips
             Text(
-              'Tips',
+              'Tips ',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -154,18 +154,39 @@ class LearnPage extends StatelessWidget {
         },
         child: Container(
           height: 100.0,
+          width: 400.0,
           decoration: BoxDecoration(
-            color: Colors.lightGreen,
+            color: Colors.lightGreen, // Indicating Clickable
             borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Center(
-            child: Text(
-              document['VideoName'],
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 5.0,
+                spreadRadius: 1.0,
+                offset: Offset(0, 2),
               ),
+            ],
+            border: Border.all(
+              color: Colors.black, // Border color for clickable buttons
             ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.video_library, // Video icon
+                size: 40,
+                color: Colors.black,
+              ),
+              SizedBox(height: 8),
+              Text(
+                document['VideoName'],
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -182,17 +203,37 @@ class LearnPage extends StatelessWidget {
         width: 200.0,
         margin: EdgeInsets.only(right: 10.0),
         decoration: BoxDecoration(
-          color: Colors.lightGreen,
+          color: Colors.lightGreen, // Indicating Clickable
           borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Center(
-          child: Text(
-            document['Title'],
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 5.0,
+              spreadRadius: 1.0,
+              offset: Offset(0, 2),
             ),
+          ],
+          border: Border.all(
+            color: Colors.black, // Border color for clickable buttons
           ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.article, // Article icon
+              size: 40,
+              color: Colors.black,
+            ),
+            SizedBox(height: 8),
+            Text(
+              document['Title'],
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -206,6 +247,14 @@ class LearnPage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.lightGreen,
         borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 5.0,
+            spreadRadius: 1.0,
+            offset: Offset(0, 2),
+          ),
+        ],
       ),
       child: Center(
         child: Padding(
