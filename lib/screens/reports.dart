@@ -61,21 +61,26 @@ class ShowReportsPage extends StatelessWidget {
             itemCount: reports.length,
             itemBuilder: (context, index) {
               Report report = reports[index];
-              return ListTile(
-                // Display report details in ListTile
-                leading: report.imageUrl.isNotEmpty
-                    ? Image.memory(
-                        base64Decode(report.imageUrl),
-                        width: 100, // Adjust image width
-                        height: 100, // Adjust image height
-                      )
-                    : SizedBox.shrink(), // Hide leading widget if no image
-                title: Text(report.location),
-                subtitle: Text(report.description),
+              return GestureDetector(
                 onTap: () {
                   // Show edit report dialog when ListTile is tapped
                   _showEditReportDialog(context, report);
                 },
+                child: Card(
+                  elevation: 3, // Add elevation for subtle shadow effect
+                  child: ListTile(
+                    // Display report details in ListTile
+                    leading: report.imageUrl.isNotEmpty
+                        ? Image.memory(
+                            base64Decode(report.imageUrl),
+                            width: 100, // Adjust image width
+                            height: 100, // Adjust image height
+                          )
+                        : SizedBox.shrink(), // Hide leading widget if no image
+                    title: Text(report.location),
+                    subtitle: Text(report.description),
+                  ),
+                ),
               );
             },
           );

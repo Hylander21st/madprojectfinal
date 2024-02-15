@@ -111,14 +111,16 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: _buildLearnCardItem('Tips', onTap: () {
+                      child: _buildLearnCardItem('Tips', Icons.lightbulb,
+                          onTap: () {
                         // Handle tap for 'Tips'
                         print('Tips tapped!');
                       }),
                     ),
                     SizedBox(width: 20.0),
                     Expanded(
-                      child: _buildLearnCardItem('Articles', onTap: () {
+                      child: _buildLearnCardItem('Articles', Icons.article,
+                          onTap: () {
                         // Handle tap for 'Articles'
                         print('Articles tapped!');
                       }),
@@ -126,7 +128,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20.0),
-                _buildLearnCardItem('Videos', onTap: () {
+                _buildLearnCardItem('Videos', Icons.video_library, onTap: () {
                   // Handle tap for 'Videos'
                   print('Videos tapped!');
                 }),
@@ -142,6 +144,7 @@ class HomePage extends StatelessWidget {
                     Expanded(
                       child: _buildRecyclingCardItem(
                         label: 'Guide',
+                        icon: Icons.book,
                         onTap: () {
                           Get.to(() => CentersAndItemsPage());
                         },
@@ -151,6 +154,7 @@ class HomePage extends StatelessWidget {
                     Expanded(
                       child: _buildRecyclingCardItem(
                         label: 'Report',
+                        icon: Icons.report,
                         onTap: () {
                           Get.to(() => ReportPage());
                         },
@@ -225,7 +229,7 @@ class HomePage extends StatelessWidget {
   }
 
   // Widget for building learn card items
-  Widget _buildLearnCardItem(String label, {Function onTap}) {
+  Widget _buildLearnCardItem(String label, IconData icon, {Function onTap}) {
     return GestureDetector(
       onTap: onTap,
       child: Opacity(
@@ -241,14 +245,22 @@ class HomePage extends StatelessWidget {
             ),
           ),
           padding: EdgeInsets.all(16.0),
-          child: Center(
-            child: Text(
-              label,
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(
+                icon,
+                size: 36.0,
+                color: Colors.black,
               ),
-            ),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -256,7 +268,8 @@ class HomePage extends StatelessWidget {
   }
 
   // Widget for building recycling guide card items
-  Widget _buildRecyclingCardItem({String label, Function onTap}) {
+  Widget _buildRecyclingCardItem(
+      {String label, IconData icon, Function onTap}) {
     return GestureDetector(
       onTap: onTap,
       child: Opacity(
@@ -272,14 +285,22 @@ class HomePage extends StatelessWidget {
             ),
           ),
           padding: EdgeInsets.all(16.0),
-          child: Center(
-            child: Text(
-              label,
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(
+                icon,
+                size: 36.0,
+                color: Colors.black,
               ),
-            ),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),
