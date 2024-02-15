@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "616733079969",
+    "project_id": "cpmad-project1-3ba5e",
+    "storage_bucket": "cpmad-project1-3ba5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616733079969:android:6ed8d6d954d29f288eb3e0",
+        "android_client_info": {
+          "package_name": "com.example.firebase_firestoreapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5no1UnX7noDQYuwATmi4j7_GBQ5hKdQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
