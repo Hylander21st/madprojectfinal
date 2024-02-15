@@ -111,24 +111,21 @@ class HomePage extends StatelessWidget {
                     Expanded(
                       child: _buildLearnCardItem('Tips', Icons.lightbulb,
                           onTap: () {
-                        // Handle tap for 'Tips'
-                        print('Tips tapped!');
+                        Get.to(LearnPage());
                       }),
                     ),
                     SizedBox(width: 20.0),
                     Expanded(
                       child: _buildLearnCardItem('Articles', Icons.article,
                           onTap: () {
-                        // Handle tap for 'Articles'
-                        print('Articles tapped!');
+                        Get.to(LearnPage());
                       }),
                     ),
                   ],
                 ),
                 SizedBox(height: 20.0),
                 _buildLearnCardItem('Videos', Icons.video_library, onTap: () {
-                  // Handle tap for 'Videos'
-                  print('Videos tapped!');
+                  Get.to(LearnPage());
                 }),
               ],
             ),
